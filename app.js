@@ -9,7 +9,7 @@ app.use(express.json());
 // Conexión a MongoDB
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("✅ Conectado a MongoDB"))
-    .catch(err => console.error("❌ Error:", err));
+    .catch(err => console.error(" Error:", err));
 
 // --- LÓGICA MATEMÁTICA DEL EXAMEN ---
 function obtenerDomingoPascua(ano) {
@@ -72,10 +72,10 @@ app.get('/api/festivos/verificar/:ano/:mes/:dia', async (req, res) => {
 const PORT = 8080;
 app.listen(PORT, () => {
     console.log("-----------------------------------------");
-    console.log(`🚀 SERVIDOR LISTO EN: http://localhost:${PORT}`);
+    console.log(` SERVIDOR LISTO EN: http://localhost:${PORT}`);
     console.log("-----------------------------------------");
 });
 
 mongoose.connection.on('connected', () => {
-    console.log("✅ CONECTADO EXITOSAMENTE A MONGODB");
+    console.log(" CONECTADO EXITOSAMENTE A MONGODB");
 });
